@@ -3,11 +3,11 @@
   <title>(」・ω・)」うー!(/・ω・)/にゃー!</title>
   
   
-  <link href="/StartHexo/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="https://laroyeh.github.io/"/>
+  <link href="https://laroyeh.github.io/StartHexo/"/>
   <updated>2018-04-23T13:16:14.839Z</updated>
-  <id>https://laroyeh.github.io/</id>
+  <id>https://laroyeh.github.io/StartHexo/</id>
   
   <author>
     <name>Laro Yeh</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://laroyeh.github.io/2018/04/23/hello-world/"/>
-    <id>https://laroyeh.github.io/2018/04/23/hello-world/</id>
+    <link href="https://laroyeh.github.io/StartHexo/2018/04/23/hello-world/"/>
+    <id>https://laroyeh.github.io/StartHexo/2018/04/23/hello-world/</id>
     <published>2018-04-23T13:16:14.838Z</published>
     <updated>2018-04-23T13:16:14.839Z</updated>
     
