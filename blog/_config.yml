@@ -84,6 +84,6 @@ deploy:
   message: Build Hexo
 
 # Disqus
-enable: true
-disqus_shortname: laroyeh-github-io-starthexo
-count: true
+# enable: true
+# disqus_shortname: laroyeh-github-io-starthexo
+# count: true
