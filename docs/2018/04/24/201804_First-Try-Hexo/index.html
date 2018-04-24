@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>使用Hexo框架及佈署到Github | (」・ω・)」うー!(/・ω・)/にゃー!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hexo">
+    <meta name="description" content="準備環境 順手的編譯工具 (如: Visual Studio Code) Node.js (https://nodejs.org/en/) git我幾乎都是用VS在編寫程式碼，指是前端寫起來比較輕鬆，我會改用比較輕量的Code至於Node.js, 主要是使用npm比較方便，指示我對他還很不熟，就不多說了 “XDgit則可有可無，如果沒裝，稍後取得檔案的部分，就要從網站上下載，無法享受git的方便之">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Hexo框架及佈署到Github">
+<meta property="og:url" content="https://laroyeh.github.io/StartHexo/2018/04/24/201804_First-Try-Hexo/index.html">
+<meta property="og:site_name" content="(」・ω・)」うー!(&#x2F;・ω・)&#x2F;にゃー!">
+<meta property="og:description" content="準備環境 順手的編譯工具 (如: Visual Studio Code) Node.js (https://nodejs.org/en/) git我幾乎都是用VS在編寫程式碼，指是前端寫起來比較輕鬆，我會改用比較輕量的Code至於Node.js, 主要是使用npm比較方便，指示我對他還很不熟，就不多說了 “XDgit則可有可無，如果沒裝，稍後取得檔案的部分，就要從網站上下載，無法享受git的方便之">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2018-04-24T14:45:40.575Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Hexo框架及佈署到Github">
+<meta name="twitter:description" content="準備環境 順手的編譯工具 (如: Visual Studio Code) Node.js (https://nodejs.org/en/) git我幾乎都是用VS在編寫程式碼，指是前端寫起來比較輕鬆，我會改用比較輕量的Code至於Node.js, 主要是使用npm比較方便，指示我對他還很不熟，就不多說了 “XDgit則可有可無，如果沒裝，稍後取得檔案的部分，就要從網站上下載，無法享受git的方便之">
+    
+        <link rel="alternate" type="application/atom+xml" title="(」・ω・)」うー!(/・ω・)/にゃー!" href="/StartHexo/atom.xml">
+    
+    <link rel="shortcut icon" href="/StartHexo/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/StartHexo/img/brand.jpg)">
+      <div class="brand">
+        <a href="/StartHexo/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/StartHexo/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Laro Yeh</h5>
+          <a href="mailto:rola1989@yahoo.com.tw" title="rola1989@yahoo.com.tw" class="mail">rola1989@yahoo.com.tw</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/StartHexo/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/StartHexo/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/StartHexo/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/StartHexo/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LaroYeh" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">使用Hexo框架及佈署到Github</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">使用Hexo框架及佈署到Github</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-04-24T12:59:36.000Z" itemprop="datePublished" class="page-time">
+  2018-04-24
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/StartHexo/categories/框架/">框架</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/StartHexo/categories/框架/Hexo/">Hexo</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#準備環境"><span class="post-toc-number">1.</span> <span class="post-toc-text">準備環境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安裝Hexo框架"><span class="post-toc-number">2.</span> <span class="post-toc-text">安裝Hexo框架</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#套用主題-theme"><span class="post-toc-number">3.</span> <span class="post-toc-text">套用主題(theme)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#佈署到Github"><span class="post-toc-number">4.</span> <span class="post-toc-text">佈署到Github</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#版本參考"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">版本參考</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#參考資料"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">參考資料:</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-201804_First-Try-Hexo"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">使用Hexo框架及佈署到Github</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-04-24 20:59:36" datetime="2018-04-24T12:59:36.000Z"  itemprop="datePublished">2018-04-24</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/StartHexo/categories/框架/">框架</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/StartHexo/categories/框架/Hexo/">Hexo</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="準備環境"><a href="#準備環境" class="headerlink" title="準備環境"></a>準備環境</h2><ul>
+<li>順手的編譯工具 (如: Visual Studio Code)</li>
+<li>Node.js (<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a>)</li>
+<li>git<br>我幾乎都是用VS在編寫程式碼，指是前端寫起來比較輕鬆，我會改用比較輕量的Code<br>至於Node.js, 主要是使用npm比較方便，指示我對他還很不熟，就不多說了 “XD<br>git則可有可無，如果沒裝，稍後取得檔案的部分，就要從網站上下載，無法享受git的方便之處</li>
+</ul>
+<h2 id="安裝Hexo框架"><a href="#安裝Hexo框架" class="headerlink" title="安裝Hexo框架"></a>安裝Hexo框架</h2><ol>
+<li>VS Code中「新增資料夾至工作區」</li>
+<li>以Ctrl+`打開終端機，然後照著Hexo官方網站(<a href="https://hexo.io/zh-tw/" target="_blank" rel="noopener">https://hexo.io/zh-tw/</a>) 的說明，分別輸入指令 <blockquote><p>npm install hexo-cli -g<br>hexo init blog<br>cd blog<br>npm install<br>hexo server</p>
+</blockquote></li>
+<li>看到 “Hexo is running at <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>. Press Ctrl+C to stop” 這段時，就能壓著Ctrl點網址看看 “Hello World!”</li>
+</ol>
+<p>到這邊應該不會遇到什麼大問題，不排除Hexo的建置有改指令，最好第一次建構時要去官網確認。<br>Hexo預設的測試路徑為 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，如有改過Hexo的設置，網址可能會不同。<br>要特別注意的是，接下來的操作，都是在blog這資料夾中執行，如關掉編譯器再開啟時發現指令無法生效，記得檢查有沒有cd到正確路徑</p>
+<h2 id="套用主題-theme"><a href="#套用主題-theme" class="headerlink" title="套用主題(theme)"></a>套用主題(theme)</h2><p>除了自己切版外，Hexo有許多他人提供的theme (<a href="https://hexo.io/themes/index.html" target="_blank" rel="noopener">https://hexo.io/themes/index.html</a>)<br>我最後是選擇 indigo(<a href="https://github.com/yscoder/hexo-theme-indigo)" target="_blank" rel="noopener">https://github.com/yscoder/hexo-theme-indigo)</a>, 主因是它有RWD, 而且側邊欄能隨意收合<br>如果已裝了兩種(不含預設)以上的theme，以下操作請自行酌減。</p>
+<p>參考theme的文件 <a href="https://github.com/yscoder/hexo-theme-indigo/wiki/%E5%AE%89%E8%A3%85" target="_blank" rel="noopener">https://github.com/yscoder/hexo-theme-indigo/wiki/%E5%AE%89%E8%A3%85</a></p>
+<ol>
+<li>下載主題包。在terminal執行 <blockquote><p>git clone <a href="https://github.com/yscoder/hexo-theme-indigo.git" target="_blank" rel="noopener">https://github.com/yscoder/hexo-theme-indigo.git</a> themes/indigo<br>npm install hexo-renderer-less –save<br>npm install hexo-generator-feed –save<br>npm install hexo-generator-json-content –save<br>npm install hexo-helper-qrcode –save</p>
+</blockquote></li>
+<li>開啟標籤(tags)。在terminal執行 <blockquote><p>hexo new page tags</p>
+</blockquote></li>
+<li>將上個指令所產生的檔案(/source/tags/index.md)加上 <blockquote><p>layout: tags<br>comments: false</p>
+</blockquote></li>
+<li>分類(categories)功能。在terminal執行 <blockquote><p>hexo new page categories</p>
+</blockquote></li>
+<li>將上個指令所產生的檔案(/source/categories/index.md)加上 <blockquote><p>layout: categories<br>comments: false</p>
+</blockquote></li>
+<li>開啟_config.yml, 將 “theme: landscape” 改為 “theme: indigo” </li>
+<li>在termial中輸入 “hexo server” 來啟動網頁</li>
+</ol>
+<p>到這裡，就會看到網站文章雖然沒變，風格卻已經大改了。只是這版面仍有很多是原作者的設定，可參考原作提供的文件調整(<a href="https://github.com/yscoder/hexo-theme-indigo/wiki/%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener">https://github.com/yscoder/hexo-theme-indigo/wiki/%E9%85%8D%E7%BD%AE</a>) ，接下來我只說明比較特別的部分</p>
+<ol start="8">
+<li>停用「賞」。(類似+1或讚)<br>將 /blog/themes/indigo/_config.yml 中 <blockquote><p>title: 谢谢大爷~<br>wechat: /img/wechat.jpg     #微信，关闭设为 false<br>alipay: /img/alipay.jpg     #支付宝，关闭设为 false</p>
+</blockquote>
+改為 <blockquote><p>reward: false</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="佈署到Github"><a href="#佈署到Github" class="headerlink" title="佈署到Github"></a>佈署到Github</h2><p>路徑的部分，就看情況代換了。以我來說，是把git設定在某個Projects下的StartHexo<br>最外層的結構長這樣<br>    <blockquote><p>StartHexo/.git/<br>StartHexo/blog/<br>StartHexo/docs/</p>
+</blockquote><br>而我在Github上有一個對應的Repo也叫做StartHexo，以下範例是在這前提下演示的<br>如果要改成別的，就記得取代 StartHexo 這字眼</p>
+<ol>
+<li>到 /blog/_config.yml 檔案中，設定URL(改下面兩個屬性，我預計用 /docs 這subfolder) <blockquote><p>url: <a href="https://laroyeh.github.io/StartHexo">https://laroyeh.github.io/StartHexo</a><br>root: /StartHexo/</p>
+</blockquote></li>
+<li>上傳到Github上 (這個應該不用說了? 我比較懶, 是用 Github Desktop操作) </li>
+<li>到Github中的該Repo的設定(Setting)中，找到”GitHub Pages”，然後將 Source 選擇成有 “/docs folder” 這字眼的，然後Save(儲存)</li>
+<li>應該會看到一個網址，點下去檢查有沒有問題吧！ (正在看的Blog，就是這樣生出來的)</li>
+</ol>
+<hr>
+<h3 id="版本參考"><a href="#版本參考" class="headerlink" title="版本參考"></a>版本參考</h3><ul>
+<li>Visual Studio Code v1.19.3</li>
+<li>Node.js v8.9.4</li>
+<li>hexo: 3.7.1</li>
+<li>hexo-cli: 1.1.0</li>
+<li>git version 2.16.1.windows.1</li>
+</ul>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料:"></a>參考資料:</h3><p><a href="https://hexo.io/zh-tw/" target="_blank" rel="noopener">https://hexo.io/zh-tw/</a><br><a href="https://hexo.io/zh-tw/docs/configuration.html" target="_blank" rel="noopener">https://hexo.io/zh-tw/docs/configuration.html</a><br><a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="noopener">https://github.com/yscoder/hexo-theme-indigo</a><br><a href="https://github.com/yscoder/hexo-theme-indigo/wiki" target="_blank" rel="noopener">https://github.com/yscoder/hexo-theme-indigo/wiki</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最後更新時間：<time datetime="2018-04-24T14:45:40.575Z" itemprop="dateUpdated">2018-04-24 22:45:40</time>
+</span><br>
+
+
+        
+        看到這裡辛苦了！
+        
+    </div>
+    
+    <footer>
+        <a href="https://laroyeh.github.io/StartHexo">
+            <img src="/StartHexo/img/avatar.jpg" alt="Laro Yeh">
+            Laro Yeh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/StartHexo/tags/Hexo/">Hexo</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://laroyeh.github.io/StartHexo/2018/04/24/201804_First-Try-Hexo/&title=《使用Hexo框架及佈署到Github》 — (」・ω・)」うー!(/・ω・)/にゃー!&pic=https://laroyeh.github.io/StartHexo/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://laroyeh.github.io/StartHexo/2018/04/24/201804_First-Try-Hexo/&title=《使用Hexo框架及佈署到Github》 — (」・ω・)」うー!(/・ω・)/にゃー!&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://laroyeh.github.io/StartHexo/2018/04/24/201804_First-Try-Hexo/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用Hexo框架及佈署到Github》 — (」・ω・)」うー!(/・ω・)/にゃー!&url=https://laroyeh.github.io/StartHexo/2018/04/24/201804_First-Try-Hexo/&via=https://laroyeh.github.io/StartHexo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://laroyeh.github.io/StartHexo/2018/04/24/201804_First-Try-Hexo/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/StartHexo/2018/04/23/201804_hello-world/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Hello World</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        總訪客數：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        總訪問量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/StartHexo/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Laro Yeh &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://laroyeh.github.io/StartHexo/2018/04/24/201804_First-Try-Hexo/&title=《使用Hexo框架及佈署到Github》 — (」・ω・)」うー!(/・ω・)/にゃー!&pic=https://laroyeh.github.io/StartHexo/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://laroyeh.github.io/StartHexo/2018/04/24/201804_First-Try-Hexo/&title=《使用Hexo框架及佈署到Github》 — (」・ω・)」うー!(/・ω・)/にゃー!&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://laroyeh.github.io/StartHexo/2018/04/24/201804_First-Try-Hexo/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用Hexo框架及佈署到Github》 — (」・ω・)」うー!(/・ω・)/にゃー!&url=https://laroyeh.github.io/StartHexo/2018/04/24/201804_First-Try-Hexo/&via=https://laroyeh.github.io/StartHexo" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://laroyeh.github.io/StartHexo/2018/04/24/201804_First-Try-Hexo/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvUlEQVR42u3awW7bQAwEUP//T7dATwVq2TOk1nGBp1PgyBLfBpCY4T4e8fHrz/HvJ38fV+e//u7V1a6Ox4kDDw8Pb1T668slmCvS699enfN6mYolwMPDwzvGe/0y2Nw4X4i8hqRmPDw8vG/gJa1tXnrbfOPh4eH9v7y8HW/LbV8/eHh4eD/LS8KI/WO9vU4ejtyQteDh4eEdmCJ9z88H53t4eHh4i6n65rGevGBmWweKOvHw8PAO8DbjqyRKSJ7Ys9a5GKfh4eHhHeDNNkLNbrPZgDWLOfDw8PA+z2tb5xyff56w3yDx8PDwbuW1jWzeKLcDrdkgLQoj8PDw8G7itW1024jnzfGshiLAxcPDw7uVlzSpm5h1NviftfjFPxF4eHh4C95sF1P+2tiEC5uoFw8PD+80rx105fFr22onG7OiPxUeHh7eMV5y41nEsCluFuw+iXHx8PDwjvGSB/FsIWbgtrkvNg3g4eHhrXknSm9D3n2k++RzPDw8vGO82TapusENQof2dVK31Hh4eHhrXnKzNjLIY4U2FG6vjIeHh/dJ3mb8nzzW260Jsw1heHh4eCd47YAquWgbMbQN92rTFR4eHt4BXv7Ybcf5bVM+izaeZC14eHh4t/KKYVLcZOetc75Msz8AHh4e3glePl7KR/j7svLA4k09eHh4eAd4s69tgt18cDULNfDw8PBO89rHdLsJYBYxzJb4SW14eHh4B3jthqo2pGjB7QaC+r2Hh4eHd7jn3JS42WKV3/HNcuDh4eEd4OVHXnreaifgtqHHw8PD+wxvExBsCm3LTWpbhbl4eHh4JS9/xLff2gy0bjgfDw8P72t47WhqtoUrf+Xc/GLAw8PDu4m3H+EnwW67hSvKqvHw8PAO8Now4t7x2Gz8djBrwcPDw3t/fjEAy+OGvP29a4mHUz48PDy8lPcb+39WGoqkygsAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/StartHexo/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(／・ω・)／ピンチ!‌';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '＼(・ω・＼)SAN値!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
