@@ -1,5 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
+updated: 
+tags: Hexo
+categories: [框架, Hexo]
 ---

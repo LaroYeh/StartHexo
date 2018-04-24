@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="(」・ω・)」うー!(&#x2F;・ω・)&#x2F;にゃー!">
 <meta property="og:description" content="準備環境 順手的編譯工具 (如: Visual Studio Code) Node.js (https://nodejs.org/en/) git我幾乎都是用VS在編寫程式碼，指是前端寫起來比較輕鬆，我會改用比較輕量的Code至於Node.js, 主要是使用npm比較方便，指示我對他還很不熟，就不多說了 “XDgit則可有可無，如果沒裝，稍後取得檔案的部分，就要從網站上下載，無法享受git的方便之">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2018-04-24T14:45:40.575Z">
+<meta property="og:updated_time" content="2018-04-24T15:10:07.977Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo框架及佈署到Github">
 <meta name="twitter:description" content="準備環境 順手的編譯工具 (如: Visual Studio Code) Node.js (https://nodejs.org/en/) git我幾乎都是用VS在編寫程式碼，指是前端寫起來比較輕鬆，我會改用比較輕量的Code至於Node.js, 主要是使用npm比較方便，指示我對他還很不熟，就不多說了 “XDgit則可有可無，如果沒裝，稍後取得檔案的部分，就要從網站上下載，無法享受git的方便之">
@@ -225,7 +225,7 @@
 <h2 id="佈署到Github"><a href="#佈署到Github" class="headerlink" title="佈署到Github"></a>佈署到Github</h2><p>路徑的部分，就看情況代換了。以我來說，是把git設定在某個Projects下的StartHexo<br>最外層的結構長這樣<br>    <blockquote><p>StartHexo/.git/<br>StartHexo/blog/<br>StartHexo/docs/</p>
 </blockquote><br>而我在Github上有一個對應的Repo也叫做StartHexo，以下範例是在這前提下演示的<br>如果要改成別的，就記得取代 StartHexo 這字眼</p>
 <ol>
-<li>到 /blog/_config.yml 檔案中，設定URL(改下面兩個屬性，我預計用 /docs 這subfolder) <blockquote><p>url: <a href="https://laroyeh.github.io/StartHexo">https://laroyeh.github.io/StartHexo</a><br>root: /StartHexo/</p>
+<li>到 /blog/_config.yml 檔案中，設定URL和匯出資料夾(改下面三個屬性，我預計用 /docs 這subfolder) <blockquote><p>url: <a href="https://laroyeh.github.io/StartHexo">https://laroyeh.github.io/StartHexo</a><br>root: /StartHexo/<br>public_dir: ../docs</p>
 </blockquote></li>
 <li>上傳到Github上 (這個應該不用說了? 我比較懶, 是用 Github Desktop操作) </li>
 <li>到Github中的該Repo的設定(Setting)中，找到”GitHub Pages”，然後將 Source 選擇成有 “/docs folder” 這字眼的，然後Save(儲存)</li>
@@ -248,7 +248,7 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2018-04-24T14:45:40.575Z" itemprop="dateUpdated">2018-04-24 22:45:40</time>
+    最後更新時間：<time datetime="2018-04-24T15:10:07.977Z" itemprop="dateUpdated">2018-04-24 23:10:07</time>
 </span><br>
 
 
@@ -325,7 +325,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/StartHexo/2018/04/24/201804_HexoPackages/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">其他可能會用到的Hexo插件</h4>
+      </a>
+    </div>
   
 
   

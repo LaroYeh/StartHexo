@@ -91,10 +91,11 @@ Hexo預設的測試路徑為 http://localhost:4000/ ，如有改過Hexo的設置
 而我在Github上有一個對應的Repo也叫做StartHexo，以下範例是在這前提下演示的
 如果要改成別的，就記得取代 StartHexo 這字眼
 
-1. 到 /blog/_config.yml 檔案中，設定URL(改下面兩個屬性，我預計用 /docs 這subfolder)
+1. 到 /blog/_config.yml 檔案中，設定URL和匯出資料夾(改下面三個屬性，我預計用 /docs 這subfolder)
     {% blockquote %}
     url: https://laroyeh.github.io/StartHexo
     root: /StartHexo/
+    public_dir: ../docs
     {% endblockquote %}
 2. 上傳到Github上 (這個應該不用說了? 我比較懶, 是用 Github Desktop操作) 
 3. 到Github中的該Repo的設定(Setting)中，找到"GitHub Pages"，然後將 Source 選擇成有 "/docs folder" 這字眼的，然後Save(儲存)
