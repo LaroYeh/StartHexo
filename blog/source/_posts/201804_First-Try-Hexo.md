@@ -11,8 +11,8 @@ categories: [框架, Hexo]
 - 順手的編譯工具 (如: Visual Studio Code)
 - Node.js (https://nodejs.org/en/)
 - git 
-我幾乎都是用VS在編寫程式碼，指是前端寫起來比較輕鬆，我會改用比較輕量的Code
-至於Node.js, 主要是使用npm比較方便，指示我對他還很不熟，就不多說了 "XD
+我幾乎都是用VS在編寫程式碼，只是前端寫起來比較輕量，所以改用輕量版的VS Code
+至於Node.js, 主要是使用npm比較方便，但我對他還很不熟，就不多說了 "XD
 git則可有可無，如果沒裝，稍後取得檔案的部分，就要從網站上下載，無法享受git的方便之處
 
 ## 安裝Hexo框架
