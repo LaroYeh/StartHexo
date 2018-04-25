@@ -10,6 +10,9 @@ npm install
 # change dev folder
 cd blog
 
+# get theme
+git clone https://github.com/yscoder/hexo-theme-indigo.git themes/indigo
+
 # serve start at localhost:4000
 hexo server
 ```
